@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# author: Georg Schmidt <gs-develop@gs-sys.de>
+# version: 04.2017
+
+if [ $(dpkg-query -W -f='${Status}' rhash 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install rhash;
+  exit 0;
+fi
+
+if [ "$1" == "-c" ] && [ "$2" != "" ] && [ "$3" == "" ];
+then
+    rhash -c $2
+    exit $?
+elif [ "$1" != "" ] && [ "$2" == "" ];
+then
+    rhash --sha3-512 $1
+    exit $?
+else
+    echo -e "sha3sum <dir or file>\nsha3sum -c <checksum-file>"
+    exit 0
+fi
