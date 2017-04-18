@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# author: Georg Schmidt <gs-develop@gs-sys.de>
+# version: 01.2017
+
+# location: /sbin/updater
+# chmod 555 /sbin/updater
+
+apt-get update
+apt-get -y dist-upgrade
+
+apt-get -y autoremove
+apt-get -y autoclean
