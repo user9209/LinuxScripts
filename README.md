@@ -1,5 +1,5 @@
-# linux_scripts
-Some scripts for debian or ubuntu.
+# Linux Scripts
+Some scripts for debian or ubuntu. Some windows scripts may be found here.
 
 # Possibly in early development and dangerous behavior !
 
