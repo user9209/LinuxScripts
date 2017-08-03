@@ -1,0 +1,5 @@
+# deb
+https://packages.debian.org/sid/utils/megatools
+https://packages.debian.org/sid/amd64/megatools/download
+
+https://megatools.megous.com/
