@@ -1,0 +1,4 @@
+https://www.pki.dfn.de/wurzelzertifikate/globalroot/
+
+https://www.pki.dfn.de/fileadmin/PKI/zertifikate/deutsche-telekom-root-ca-2.pem
+https://www.pki.dfn.de/fileadmin/PKI/zertifikate/deutsche-telekom-root-ca-2.crt

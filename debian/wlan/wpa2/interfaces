@@ -1,0 +1,30 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
+auto eth0
+#iface eth0 inet dhcp
+iface eth0 inet static
+  address 192.168.0.100
+  netmask 255.255.255.0
+  gateway 192.168.0.1
+
+# man 8 iwconfig
+
+# apt-get install wpasupplicant
+
+allow-hotplug wlan0
+auto wlan0
+iface wlan0 inet dhcp
+#iface wlan0 inet static
+#  address 192.168.0.100
+#  netmask 255.255.255.0
+#  gateway 192.168.0.1
+   wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
