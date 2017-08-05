@@ -1,0 +1,11 @@
+# download
+git clone --bare git@github.com:<username>/<repo>.git
+
+# set new target
+git remote set-url origin ssh://...
+
+# check if all ok
+git remote show origin
+
+# upload to new
+git push --mirror
