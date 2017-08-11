@@ -1,0 +1,24 @@
+# git_multiple_commits_to_one_commit:
+
+# number of commits to combine
+git rebase -i HEAD~4
+
+# change pick to squash from the secound hit
+
+
+pick ASDFGH commit1
+pick BSDFGH commit2
+pick CASDFG commit3
+
+to
+
+pick ASDFGH commit1
+squash BSDFGH commit2
+squash CASDFG commit3
+
+git rebase --continue
+
+# new text
+git commit --amend
+
+git push origin branch-name --force
