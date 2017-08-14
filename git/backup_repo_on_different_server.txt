@@ -1,0 +1,6 @@
+
+# Add secound remote repo
+git remote add backup git@...
+
+# Push backup
+git push --mirror backup
