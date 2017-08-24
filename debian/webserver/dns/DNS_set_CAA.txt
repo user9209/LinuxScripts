@@ -1,0 +1,8 @@
+DNS resource record (RR) called CAA (type 257).
+
+example.org. CAA 128 issue "letsencrypt.org"
+
+
+
+bind9:
+example.com.	IN	TYPE257	\# 22 000569737375656C657473656E63727970742E6F7267
