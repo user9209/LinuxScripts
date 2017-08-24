@@ -1,0 +1,8 @@
+# Upload final cert + key to single file "server.pem"
+
+# Hash cert
+openssl x509 -in server.pem -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
+
+nano /etc/apache2/sites-enabled/000_ssl.conf
+
+service apache2 start

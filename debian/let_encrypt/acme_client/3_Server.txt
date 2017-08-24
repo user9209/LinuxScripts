@@ -1,0 +1,13 @@
+# https://github.com/porunov/acme_client/wiki/Get-a-certificate-for-multiple-domains
+
+mkdir -p /tmp/public_html/.well-known/acme-challenge
+cd /tmp/public_html/.well-known/acme-challenge/
+
+# upload files here
+
+cd /tmp/public_html/
+service apache2 stop
+
+$(command -v python2 || command -v python2.7 || command -v python2.6) -c "import BaseHTTPServer, SimpleHTTPServer; \
+s = BaseHTTPServer.HTTPServer(('', 80), SimpleHTTPServer.SimpleHTTPRequestHandler); \
+s.serve_forever()"
