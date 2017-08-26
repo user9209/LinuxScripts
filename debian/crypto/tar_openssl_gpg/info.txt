@@ -1,0 +1,13 @@
+Works not with all gpg and openssl versions.
+
+Needs gpg2 and openssl.
+
+Commands:
+gpg --version
+openssl version
+
+Tested with:
+- gpg 2.1.18 and OpenSSL 1.1.0f
+
+Not working:
+- OpenSSL 1.0.1f
