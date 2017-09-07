@@ -10,4 +10,4 @@
 PASS_FIXED=dGVzdAo=
 
 #openssl enc -camellia-256-cbc -S $SALT_FIXED -k `echo -e $PASS_FIXED | base64 -d`
-openssl enc -camellia-256-cbc -k `echo -e $PASS_FIXED | base64 -d`
+openssl enc -a -camellia-256-cbc -k `echo -e $PASS_FIXED | base64 -d`
