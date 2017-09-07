@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# create:
+#	head -c12 </dev/urandom|xxd -p -u
+# 24 or less hex characters
+# SALT_FIXED=CCC3BDC34D3EE14C61900877
+
+# create:
+#	echo -e <password> |base64
+PASS_FIXED=dGVzdAo=
+
+#openssl enc -camellia-256-cbc -S $SALT_FIXED -k `echo -e $PASS_FIXED | base64 -d`
+openssl enc -camellia-256-cbc -k `echo -e $PASS_FIXED | base64 -d`

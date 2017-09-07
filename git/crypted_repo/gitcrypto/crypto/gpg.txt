@@ -1,0 +1,5 @@
+[filter "gpg"]
+	smudge = gpg -d -q --batch --no-tty
+	clean = gpg -ea -q --batch --no-tty -r C920A124
+[diff "gpg"]
+	textconv = decrypt
