@@ -15,9 +15,15 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+##
+##	This version requires a mail address and a name.
+##
+
+
 if [ "$1" == "" ] || [ "$2" == "" ] || [ "$3" == "" ] || [ "$5" != "" ] ; then
 
-echo -e "<script>.sh <name> <mail> <pw> [<key-size>]\nValues can set to 'none'."
+echo "<script>.sh <name> <mail> <pw> [<key-size>]"
 
 else
 
@@ -32,32 +38,8 @@ mail=$2
 pw=$3
 
 
-# Set parameter
-
-if [ "$name" == "none" ]; then
-	name=""
-else
-
-	name="Name-Real: $name"
-fi
-
-if [ "$mail" == "none" ]; then
-	mail=""
-else
-	mail="Name-Email: $mail"
-fi
-
-if [ "$pw" == "none" ]; then
-	pw="%no-protection"
-	pw2="%no-ask-passphrase"
-else
-	pw="Passphrase: $pw"
-	pw2=""
-fi
-
 echo "Generate Key for '$name' '$mail' '$pw' with '$size' bits?"
 read pause1
-
 
 cat >tempconf <<EOF
      %echo Generating a basic OpenPGP key
@@ -66,11 +48,10 @@ cat >tempconf <<EOF
      Subkey-Type: RSA
      Subkey-Length: $size
      Preferences: SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
-     $name
-     $mail
-     Expire-Date: 10y
-     $pw
-     $pw2
+     Name-Real: $name
+     Name-Email: $mail
+     Expire-Date: 15y
+     Passphrase: $pw
      # Do a commit here, so that we can later print "done" :-)
      %commit
      %echo done

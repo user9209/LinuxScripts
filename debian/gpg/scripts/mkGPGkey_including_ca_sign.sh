@@ -15,6 +15,15 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+
+##
+##	In this version all generated keys are signed by a default, CA like, key.
+##	Replace A9CB7896D96B0E8F416A2581693BE19E14687187 with our key !!!
+##
+##	Before generating a key it is checked, if the mail address still exists.
+##
+
+
 if [ "$1" == "" ] || [ "$2" == "" ] || [ "$3" == "" ] || [ "$5" != "" ] ; then
 	echo -e "<script>.sh <name> <mail> <pw> [<key-size>]\nValues can set to 'none'."
 else
@@ -75,7 +84,7 @@ cat >tempconf <<EOF
      Preferences: SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
      $name
      $mail
-     Expire-Date: 10y
+     Expire-Date: 15y
      $pw
      $pw2
      # Do a commit here, so that we can later print "done" :-)
