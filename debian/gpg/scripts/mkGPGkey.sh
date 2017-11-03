@@ -64,14 +64,14 @@ fi
 echo "Generate Key for '$name' '$mail' '$pw' with '$size' bits?"
 read pause1
 
-
-cat >tempconf <<EOF
+tmp_file=`mktemp`
+cat >$tmp_file <<EOF
      %echo Generating a basic OpenPGP key
      Key-Type: RSA
      Key-Length: $size
      Subkey-Type: RSA
      Subkey-Length: $size
-     Preferences: SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
+     Preferences: SHA512 SHA384 SHA256 SHA224 CAMELLIA256 TWOFISH AES256 CAMELLIA192 AES192 BLOWFISH CAMELLIA128 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
      $name
      $mail
      Expire-Date: 15y
@@ -82,7 +82,7 @@ cat >tempconf <<EOF
      %echo done
 EOF
 
-gpg2 --batch --gen-key tempconf
-rm tempconf
+gpg2 --batch --gen-key $tmp_file
+rm $tmp_file
 
 fi

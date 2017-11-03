@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# No salt is needed for decryption.
+
+#	echo -e <password> |base64
+PASS_FIXED=dGVzdAo=
+
+# If decryption fails, use `cat` instead. 
+# Error messages are redirected to /dev/null.
+openssl enc -d -camellia-256-cbc -k `echo -e $PASS_FIXED | base64 -d` 2> /dev/null || cat
