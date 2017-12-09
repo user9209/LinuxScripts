@@ -1,0 +1,12 @@
+# to disable ipv6 in grub2 settings
+
+nano /etc/default/grub
+	# change
+	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
+	# to
+	GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 quiet splash"
+
+
+# update config
+update-grub
