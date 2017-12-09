@@ -5,10 +5,12 @@
 
 ## create at: /opt/de.gs-sys.bash/boot_system_info.sh
 # chmod 500 /opt/de.gs-sys.bash/boot_system_info.sh
-
+#
 ## insert to autostart:
 # nano /etc/rc.local 
 #     /opt/de.gs-sys.bash/boot_system_info.sh
+#
+# chmod 500 /etc/rc.local
 
 echo>/etc/issue "Debian GNU/Linux 9 \\n \\l"
 echo>>/etc/issue ""
