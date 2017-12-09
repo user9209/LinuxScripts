@@ -3,8 +3,12 @@
 # author: Georg Schmidt <gs-develop@gs-sys.de>
 # version: 01.2017
 
-# chmod 700 /Anpassungen/boot_system_info.sh
-# nano /etc/rc.local -> /Anpassungen/boot_system_info.sh
+## create at: /opt/de.gs-sys.bash/boot_system_info.sh
+# chmod 500 /opt/de.gs-sys.bash/boot_system_info.sh
+
+## insert to autostart:
+# nano /etc/rc.local 
+#     /opt/de.gs-sys.bash/boot_system_info.sh
 
 echo>/etc/issue "Debian GNU/Linux 9 \\n \\l"
 echo>>/etc/issue ""
