@@ -4,13 +4,17 @@
  * location: /sbin/updater
  */
 
-//# Compile with
-//  gcc updater.c -o updater
+/*
+ * Compile with
+     gcc updater.c -o updater
+ */
 
-//# Setup
-//  cp updater /sbin/updater
-//  chown root /sbin/updater
-//  chmod 4555 /sbin/updater
+/*
+ * Setup
+    cp updater /sbin/updater
+    chown root /sbin/updater
+    chmod 4555 /sbin/updater
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
