@@ -1,0 +1,17 @@
+FROM debian:latest
+#FROM debian:sid
+
+RUN apt-get update
+RUN apt-get install -y apt-utils
+RUN apt-get -y dist-upgrade
+RUN apt-get install -y php7.0
+
+ADD ./index.php /var/index.php
+VOLUME /dockershare
+WORKDIR /var
+
+CMD ["php", "-S", "0.0.0.0:9090", "-t", "."]
+
+#CMD service apache2 start && tail -F /var/log/error.log
+#CMD ["/etc/init.d/apache2", "start", "&&", "tail", "-F", "/var/log/error.log", "&&", "php", "-S", "0.0.0.0:9090", "-t", "."]
+
