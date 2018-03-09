@@ -1,7 +1,16 @@
 #!/bin/bash
 
-# author: Georg Schmidt <gs-develop@gs-sys.de>
-# version: 04.2017
+ #########################################
+ #   Author:    Georg Schmidt            #
+ #   E-Mail:    <gs-develop@gs-sys.de>   #
+ #   Copyright:     2017                 #
+ #   Verion:      04.2017                #
+ #########################################
+
+ ###########################################################
+ # Output is sha3sum of the whole dir given by parameter 1 #
+ ###########################################################
+
 
 if [ $(dpkg-query -W -f='${Status}' rhash 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
