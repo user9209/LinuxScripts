@@ -20,7 +20,8 @@ fi
 
 if [ "$1" == "-c" ] && [ "$2" != "" ] && [ "$3" == "" ];
 then
-    rhash -c $2
+    rhash -c $2 | grep --invert-match OK | grep --invert-match "-"
+    echo -e "\nIf there are no errors, everything is ok."
     exit $?
 elif [ "$1" != "" ] && [ "$2" == "" ];
 then
