@@ -1,0 +1,31 @@
+#!/bin/bash
+
+ ################################
+ #   Author:    Georg Schmidt   #
+ #   Copyright:     2015        #
+ ################################
+
+ ############################################################
+ # Output is sha512sum of the hole dir given by parameter 1 #
+ ############################################################
+
+ if [ "$1" == "" ]; then
+	echo  "sha512sumtree <dir>"
+	echo  "sha512sumtree -c <checksum.sha1>"
+	exit 0
+ fi
+ if [ "$1" == "-c" ]; then
+	if [ "$2" == "" ]; then
+		echo  "sha512sumtree <dir>"
+		echo  "sha512sumtree -c <checksum.sha1>"
+		exit 0
+	fi
+	sha512sum -c $2  | grep --invert-match OK
+	echo -e "\nIf there are no errors, everything is ok."
+	exit 0
+fi
+find $1 -type f -print0  | xargs -0 sha512sum
+
+exit 0
+
+

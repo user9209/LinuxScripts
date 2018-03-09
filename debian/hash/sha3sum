@@ -15,7 +15,7 @@ then
     exit $?
 elif [ "$1" != "" ] && [ "$2" == "" ];
 then
-    rhash --sha3-512 $1
+    find $1 -type f -print0  | xargs -0 rhash --sha3-512
     exit $?
 else
     echo -e "sha3sum <dir or file>\nsha3sum -c <checksum-file>"
