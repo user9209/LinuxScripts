@@ -1,0 +1,1 @@
+dd bs=1024 count=1 seek=$((1024*1024-1)) if=/dev/zero of=1G
