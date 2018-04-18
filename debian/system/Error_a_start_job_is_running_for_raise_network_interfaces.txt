@@ -1,0 +1,26 @@
+a start job is running for raise network interfaces
+
+# https://ubuntuforums.org/showthread.php?t=2323253
+
+	systemd-networkd-wait-online.service
+	NetworkManager-wait-online.service
+	
+	
+	systemctl status systemd-networkd-wait-online.service
+	systemctl status NetworkManager-wait-online.service
+	
+	
+	systemctl disable systemd-networkd-wait-online.service
+	systemctl enable systemd-networkd-wait-online.service
+	
+	
+	or
+	
+	# nano /etc/systemd/system/network-online.targets.wants/networking.service
+	nano  /lib/systemd/system/networking.service
+	
+		21:TimeoutStartSec=5min
+		21:TimeoutStartSec=30sec
+		
+	# than
+	systemctl daemon-reload

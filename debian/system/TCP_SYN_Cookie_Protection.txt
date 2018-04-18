@@ -1,0 +1,21 @@
+Linux: Turn On TCP SYN Cookie Protection
+in Categories Linux, Networking, Security last updated April 14, 2013
+
+	Use sysctl command to configure or see kernel parameters at runtime.
+	# sysctl -n net.ipv4.tcp_syncookies
+
+	OR
+	# cat /proc/sys/net/ipv4/tcp_syncookies
+
+
+Enable TCP SYN cookie protection
+
+	Edit the file /etc/sysctl.conf, run:
+	# nano /etc/sysctl.conf
+
+	Append the following entry:
+
+		net.ipv4.tcp_syncookies = 1
+
+	Save and close the file. To reload the change, type:
+	# sysctl -p 
