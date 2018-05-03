@@ -1,0 +1,29 @@
+TLS_RSA_WITH_AES_256_CBC_SHA (0x35)  
+
+
+Static Public Key Pinning (Public Key Pinning (HPKP))
+What is static public key pinning?
+Browsers can preload (i.e. embed in the browser) public key pins,
+which we call Static public key pinning.
+Whereas HTTP public key pinning (HPKP) is an example of dynamic pinning.
+https://community.qualys.com/thread/17152-what-is-static-public-key-pinning
+
+
+
+
+CAA Mandated
+Certification Authority Authorization (CAA), specified in RFC 6844
+
+https://tools.ietf.org/html/rfc6844
+
+# Who Supports CAA?
+https://sslmate.com/caa/support
+
+It operates via a new DNS resource record (RR) called CAA (type 257).
+
+my-domain.de. CAA 0 issue "letsencrypt.org"
+my-domain.de. CAA 0 issuewild "letsencrypt.org"
+my-domain.de. CAA 0 issue "my-domain.de"
+my-domain.de. CAA 0 issuewild "my-domain.de"
+
+ CAA <flags> <tag> <value>
