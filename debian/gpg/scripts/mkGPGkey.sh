@@ -68,10 +68,12 @@ tmp_file=`mktemp`
 cat >$tmp_file <<EOF
      %echo Generating a basic OpenPGP key
      Key-Type: RSA
+     Key-Usage: sign, auth
      Key-Length: $size
      Subkey-Type: RSA
      Subkey-Length: $size
-     Preferences: SHA512 SHA384 SHA256 SHA224 CAMELLIA256 TWOFISH AES256 CAMELLIA192 AES192 BLOWFISH CAMELLIA128 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
+     Subkey-Usage: encrypt
+     Preferences: SHA512 SHA384 SHA256 SHA224 CAMELLIA256 TWOFISH AES256 CAMELLIA192 AES192 Uncompressed ZIP ZLIB BZIP2
      $name
      $mail
      Expire-Date: 15y
@@ -82,7 +84,7 @@ cat >$tmp_file <<EOF
      %echo done
 EOF
 
-gpg2 --batch --gen-key $tmp_file
+gpg --batch --gen-key $tmp_file
 rm $tmp_file
 
 fi
