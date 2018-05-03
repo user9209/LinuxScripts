@@ -1,0 +1,2 @@
+#!/bin/bash
+apt-get install gparted vlc libreoffice libreoffice-l10n-de libreoffice-help-de 
