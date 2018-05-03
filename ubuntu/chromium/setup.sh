@@ -1,0 +1,1 @@
+apt-get install chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra 

@@ -1,2 +1,3 @@
 #!/bin/bash
-apt-get install git htop rng-tools numlockx
+apt-get install git htop numlockx haveged
+# rng-tools

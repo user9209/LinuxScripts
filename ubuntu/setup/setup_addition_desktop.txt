@@ -1,2 +1,5 @@
 #!/bin/bash
-apt-get install gparted vlc libreoffice libreoffice-l10n-de libreoffice-help-de 
+apt-get install gparted vlc gpa \
+libreoffice libreoffice-l10n-de libreoffice-help-de \
+xarchiver p7zip \
+claws-mail claws-mail-i18n aspell-de aspell-de-1901

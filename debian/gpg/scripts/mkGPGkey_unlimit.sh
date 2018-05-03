@@ -84,7 +84,7 @@ cat >$tmp_file <<EOF
      %echo done
 EOF
 
-gpg --batch --gen-key $tmp_file
+/bin/gpg_unlimit --batch --gen-key $tmp_file
 rm $tmp_file
 
 fi
