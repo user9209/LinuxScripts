@@ -1,0 +1,50 @@
+John Clizbe wrote:
+ Matt Kinni wrote:
+> Hello, I want to move my keyring files from %appdata%/gnupg to R:/
+>
+> I know you can do this somehow, I just can't figure out how.  Is there
+> something I can add to ggp.conf?  Or is there an environment variable I
+> can set?
+
+ The answer to both is yes, but each is a separate solution.
+
+ There are four methods that I know. The first three require you
+additionally
+ move gpg.conf. All require that you move the three keyring files:
+pubring.gpg,
+ secring.gpg, & trustdb.gpg.
+
+ 1) Add --homedir=<foo> to _every_ invocation of gpg. Fine if you don't ever make
+	tpyos and don't forget to add it.
+
+ 2) Set the environment variable GNUPGHOME to the location. Best done
+	in the User variables part of the Environment variable panel of System properties.
+	(Control panel --> System --> Advanced --> 'Environment Variables' button)
+
+ 3) Change the value of HomeDir in the HKCU\Software\Gnu\GnuPG key.
+	Some  are uncomfortable directly editing the Registry. Later runs of the installer
+	may or may not mess with this. Most likely not, feeling lucky?
+
+ 4) Set values in gpg.conf to redirect the location. (My preferred method)
+ Add the following lines to gpg.conf:
+
+    no-default-keyring
+    primary-keyring R:\pubring.gpg
+    secret-keyring  R:\secring.gpg
+    trustdb-name    R:\trustdb.gpg
+
+ You may also need
+    keyring         R:\pubring.gpg
+
+ Depending on the size of your portable storage device, you may find
+organizing with directories a bit easier. I use O:\GnuPG and O:\PGP for my keyrings
+
+ BTW, I may have forgotten to mention it over the weekend. Please turn HTML
+ composition off completely with (Open)PGP. It produces messages that
+usually will fail signature verification. It will sometimes work, but rarely.
+
+ format=flowed is another message composition "feature" that tends to break
+ signatures. It's most common in Mozilla mailers.
+
+ John
+

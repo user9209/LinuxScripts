@@ -1,0 +1,1 @@
+gpg -a --export-secret-keys >gpg_all_private_keys.asc

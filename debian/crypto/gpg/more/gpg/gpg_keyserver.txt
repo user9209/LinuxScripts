@@ -1,0 +1,11 @@
+PKS, CKS, ONAK, OpenPKSd,
+SKS, LDAP implementations
+
+ONAK und keydctl
+
+pkspxy
+
+PHKP	# https://github.com/remko/phkp/
+
+
+http://people.spodhuis.org/phil.pennock/pgp-keyservers
