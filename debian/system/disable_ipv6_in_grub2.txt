@@ -10,3 +10,21 @@ nano /etc/default/grub
 
 # update config
 update-grub
+
+# or
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
+# fedora
+nano /etc/sysconfig/network
+	NETWORKING_IPV6=no
+	
+nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+	IPV6INIT="no"
+	IPV6_AUTOCONF="no"
+	
+nano /etc/modprobe.d/ipv6.conf
+
+	install ipv6 /bin/true
+	
+# check
+	 lsmod | grep -i ipv6
