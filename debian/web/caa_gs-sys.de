@@ -1,4 +1,0 @@
-gs-sys.de. CAA 0 issue "letsencrypt.org"
-gs-sys.de. CAA 0 issuewild "letsencrypt.org"
-gs-sys.de. CAA 0 issue "gs-sys.de"
-gs-sys.de. CAA 0 issuewild "gs-sys.de"
