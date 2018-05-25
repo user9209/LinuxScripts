@@ -1,0 +1,14 @@
+# create gpg key
+./mkGPGkey_unlimit.sh "Georg Schmidt Git-Commits" "gs-develop@gs-sys.de" none 8192
+
+# get fingerprint
+gpg --list-secret-keys --keyid-format LONG
+
+# Set sign key
+git config --global user.signingkey 79E6F9CB0E85E26D
+
+# To add your GPG key to your bash profile (not needed?)
+echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
+
+# first signed commit
+git commit -S -m "commit message"
