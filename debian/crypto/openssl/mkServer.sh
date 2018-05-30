@@ -9,6 +9,10 @@ if [ "$1" == "" ]; then
   exit 0
 fi
 
+SUBJ="/C=DE/O=GS-SYS/CN=$name"
+
+name=`echo "$name" | sed "s/ /_/g"`
+
 if [ ! -d $baseD ]; then
  mkdir -p $baseD
 fi
@@ -17,7 +21,7 @@ fi
 # -subj "/C=DE/ST=Berlin/L=Berlin/O=GS-SYS/OU=IT Department/CN=www.gs-sys.de"
 
 openssl req -new -sha512 -nodes -newkey rsa:4096 -keyout $baseD/$name.key -out $baseD/$name.csr \
-  -subj "/C=DE/O=GS-SYS/CN=$name"
+  -subj "$SUBJ"
 openssl x509 -req -sha512 -CA $baseCA/CA.crt -CAkey $baseCA/CA.key -days 3650 -CAcreateserial \
    -CAserial $baseCA/CA.srl -extfile x509.ext -extensions server -in $baseD/$name.csr -out $baseD/$name.crt
 rm $baseD/$name.csr
