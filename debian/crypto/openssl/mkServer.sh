@@ -2,7 +2,7 @@
 baseCA=`dirname "$0"`/ca
 baseD=`dirname "$0"`/clients
 
-if [ ! -d $baseD ]
+if [ ! -d $baseD ]; then
  mkdir -p $baseD
 fi
 
