@@ -17,8 +17,10 @@ if [ ! -d $baseD ]; then
  mkdir -p $baseD
 fi
 
+# key size 32k will fail!
+
 #openssl req -new -sha512 -nodes -newkey rsa:4096 -keyout $baseD/$name.key -out $baseD/$name.csr \
-openssl genrsa -out $baseD/$name.key 32768
+openssl genrsa -out $baseD/$name.key 16384
 openssl req -new -sha512 -nodes -key $baseD/$name.key -out $baseD/$name.csr -subj "$SUBJ"
 openssl x509 -req -sha512 -extfile x509.ext -extensions ca -in $baseD/$name.csr -signkey $baseD/$name.key -days 7300 -out $baseD/$name.crt
 rm $baseD/$name.csr
