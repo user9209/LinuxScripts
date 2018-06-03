@@ -1,0 +1,13 @@
+nano /etc/rc.local
+
+#!/bin/sh -e
+
+/opt/LinuxScripts/debian/system/boot_system_info.sh
+
+exit 0
+
+
+chmod +x /etc/rc.local
+systemctl daemon-reload
+systemctl start rc-local
+systemctl status rc-local

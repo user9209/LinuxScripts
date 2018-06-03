@@ -6,6 +6,9 @@ nano /etc/default/grub
 
 	# to
 	GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 quiet splash"
+	
+	# including net interfaces to ethX
+	GRUB_CMDLINE_LINUX_DEFAULT="net.ifnames=0 biosdevname=0 ipv6.disable=1 quiet splash"
 
 
 # update config
