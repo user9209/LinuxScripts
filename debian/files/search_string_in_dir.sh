@@ -1,0 +1,1 @@
+grep -R '<search>' ./dir/
