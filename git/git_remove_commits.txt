@@ -1,0 +1,5 @@
+# usefull if branch has a force push and this copy need to be cleaned up before the pull:
+
+git reset --hard <commit-id>
+git clean -f -d
+git pull
