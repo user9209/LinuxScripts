@@ -1,0 +1,4 @@
+nano /usr/share/applications/chromium-browser.desktop
+	Exec=chromium-browser %U
+to
+	Exec=chromium-browser --incognito %U
