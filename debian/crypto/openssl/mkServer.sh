@@ -11,7 +11,7 @@ fi
 
 SUBJ="/C=DE/O=GS-SYS/CN=$name"
 
-name=`echo "$name" | sed "s/ /_/g"`
+name=`echo "$name" | sed "s/ /_/g" | sed "s/*/_wildcard_/g"`
 
 if [ ! -d $baseD ]; then
  mkdir -p $baseD
