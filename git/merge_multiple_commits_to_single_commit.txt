@@ -22,3 +22,7 @@ git rebase --continue
 git commit --amend
 
 git push origin branch-name --force
+
+
+# reload current git repos
+git reset --hard origin/branch-name
