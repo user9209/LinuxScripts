@@ -1,1 +1,1 @@
-apt-get purge gnome-mpv abiword gnumeric mplayer 
+apt-get purge gnome-mpv abiword gnumeric mplayer activity-log-manager

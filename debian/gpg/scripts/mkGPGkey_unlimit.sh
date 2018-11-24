@@ -84,6 +84,16 @@ cat >$tmp_file <<EOF
      %echo done
 EOF
 
+#if [ ! -d /tmp/gpg-home ]; then
+# mkdir -p /tmp/gpg-home
+# chmod 700 /tmp/gpg-home
+#fi
+
+#export GNUPGHOME=/tmp/gpg-home
+#/bin/gpg_unlimit --batch --homedir /tmp/gpg-home/ --gen-key $tmp_file
+
+# gpg-agent --daemon
+# ulimit -l unlimited
 /bin/gpg_unlimit --batch --gen-key $tmp_file
 rm $tmp_file
 
