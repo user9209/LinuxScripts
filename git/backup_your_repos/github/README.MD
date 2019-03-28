@@ -9,7 +9,7 @@
 4) Run this regex in notepad++, java or egrep ( without | )  
     - |^(?! +"ssh_url":).+$| -> ||       // all lines not containing "ssh_url"  
 	- |(^\s*$\r?\n|\r?\n\s*$)|  -> ||    // all empty lines  
-	- | +"ssh_url": "(.+)".+| -> |$1|      // cut value of "ssh_url"  
+	- | +"ssh_url": "(.+)".+| -> |$1| or |\1|     // cut value of "ssh_url" 
 	
 5) Result to "repo.list"
 
