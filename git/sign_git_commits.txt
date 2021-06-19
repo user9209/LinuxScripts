@@ -2,6 +2,10 @@ gpg --list-secret-keys --keyid-format LONG
 
 git config --global user.signingkey CE0135533D038B6F
 
+
+# echo >> ~/.bashrc "alias sgit='git commit -S -m'"
+
+
 echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
 
 # ggf.
