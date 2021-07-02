@@ -2,7 +2,7 @@
 
 1) Login in https://github.com/
 
-2) call https://api.github.com/users/< username >/repos
+2) call https://api.github.com/users/< username >/repos?page=[1-n]
 
 3) Download (2) as plain text file
 
