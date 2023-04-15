@@ -27,9 +27,22 @@ net user recuser rec /add
 ````
 
 ## make demo to admin
+
+### German
+````
+net localgroup Administratoren recuser /add
+````
+
+### English
 ````
 net localgroup administrators recuser /add
 ````
+
+### Get list
+````
+net localgroup
+````
+
 
 ## login as "recuser" with pw "rec"
 
