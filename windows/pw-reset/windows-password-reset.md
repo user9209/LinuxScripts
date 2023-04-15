@@ -1,5 +1,22 @@
 # Password Recovery via utilman.exe
 
+## Extra for new windows systems
+
+### Disable Windows Defender
+
+"Schutz des Antischadsoftware-Frühstarts deaktivieren"
+
+
+Use osk.exe (Bildschirmtastatur)
+
+````
+rename osk.exe osk.bak 
+copy cmd.exe osk.exe
+````
+
+See: https://www.deskmodder.de/wiki/index.php?title=Passwort_zur%C3%BCcksetzen_utilman.exe_weiterhin_nutzen_Windows_10_1809_und_h%C3%B6her
+
+
 ## boot linux or win
 
 ### linux
