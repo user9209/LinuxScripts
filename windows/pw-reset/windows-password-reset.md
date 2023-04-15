@@ -16,6 +16,10 @@ copy cmd.exe osk.exe
 
 See: https://www.deskmodder.de/wiki/index.php?title=Passwort_zur%C3%BCcksetzen_utilman.exe_weiterhin_nutzen_Windows_10_1809_und_h%C3%B6her
 
+### Bitlocker enabled
+
+See https://www.isumsoft.com/windows-10/reset-windows-10-local-admin-password-with-bitlocker-enabled.html
+
 
 ## boot linux or win
 
